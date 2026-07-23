@@ -118,12 +118,72 @@
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1.5deg); }
 }
-.animate-float { animation: float-slow 4s ease-in-out infinite; }
+.animate-float { animation: float-slow 6s ease-in-out infinite; }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+@keyframes float-tilt {
+  0%, 100% { transform: rotate(3deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-4px); }
 }
+.animate-float-tilt { animation: float-tilt 3.5s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 40s linear infinite; }
+
+@keyframes heat-shimmer {
+  0%, 100% { opacity: 0.35; transform: translateY(0) scaleX(1); }
+  50% { opacity: 0.6; transform: translateY(-4px) scaleX(1.05); }
+}
+.animate-heat { animation: heat-shimmer 3s ease-in-out infinite; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 28s linear infinite; }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 55%, transparent); }
+  70% { box-shadow: 0 0 0 14px color-mix(in oklab, var(--gold) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 0%, transparent); }
+}
+.animate-pulse-ring { animation: pulse-ring 2.2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+@keyframes shine-sweep {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(220%) skewX(-20deg); }
+}
+.shine::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%);
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+.group:hover .shine::after { animation: shine-sweep 0.9s ease-out forwards; }
+
+@utility btn-chunky {
+  box-shadow: 0 6px 0 0 color-mix(in oklab, var(--charcoal) 20%, var(--gold));
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+@utility btn-chunky-hover {
+  &:hover { transform: translateY(-2px); box-shadow: 0 8px 0 0 color-mix(in oklab, var(--charcoal) 25%, var(--gold)); }
+  &:active { transform: translateY(3px); box-shadow: 0 2px 0 0 color-mix(in oklab, var(--charcoal) 20%, var(--gold)); }
+}
+
+@utility card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+}
+@utility card-3d-hover {
+  &:hover { transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-6px); }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+

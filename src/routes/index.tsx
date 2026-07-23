@@ -25,9 +25,11 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  useReveal();
   const bestSellers = menu.filter((m) => m.popular).slice(0, 6);
   return (
     <SiteLayout>
+
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="container-x grid gap-10 lg:grid-cols-2 lg:gap-14 items-center pt-10 pb-16 lg:pt-16 lg:pb-24">

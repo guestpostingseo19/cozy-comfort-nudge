@@ -314,7 +314,7 @@ function Home() {
               </div>
             </div>
             <div className="flex gap-3">
-              <Utensils className="h-5 w-5 text-brand shrink-0 mt-0.5" />
+              <ChefHat className="h-5 w-5 text-brand shrink-0 mt-0.5" />
               <div>
                 <div className="font-semibold">Dining</div>
                 <div className="text-sm text-muted-foreground">Dine-in · Take-away · Free home delivery</div>

@@ -81,10 +81,11 @@ export function Header() {
           <div className="flex items-center gap-2 justify-end">
             <a
               href={telLink}
-              className="hidden md:inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white btn-glow hover:brightness-110 transition"
+              className="hidden md:inline-flex items-center gap-2 rounded-xl bg-gold px-5 py-2.5 text-sm font-black uppercase tracking-widest text-charcoal btn-chunky btn-chunky-hover"
             >
               <Phone className="h-4 w-4" /> Order Now
             </a>
+
             <button
               onClick={() => setOpen((o) => !o)}
               className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background"

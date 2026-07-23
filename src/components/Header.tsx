@@ -27,20 +27,23 @@ export function Header() {
   return (
     <>
       {/* Announcement bar */}
-      <div className="bg-charcoal text-cream text-xs sm:text-sm">
+      <div className="bg-flame text-white text-xs sm:text-sm">
         <div className="container-x flex items-center justify-between py-2 gap-3">
           <span className="flex items-center gap-2 truncate">
-            <Flame className="h-3.5 w-3.5 shrink-0 text-gold" />
-            <span className="truncate">Free home delivery in Chichawatni · Open until 2 AM daily</span>
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold animate-pulse shrink-0" />
+            <span className="truncate font-bold uppercase tracking-[0.18em] text-[10px] sm:text-xs">
+              Free delivery in Chichawatni · Open until 2 AM daily
+            </span>
           </span>
           <a
             href={telLink}
-            className="hidden sm:inline-flex items-center gap-1.5 font-medium text-gold hover:text-white transition"
+            className="hidden sm:inline-flex items-center gap-1.5 font-bold text-white hover:text-gold transition"
           >
             <Phone className="h-3.5 w-3.5" /> {business.phone}
           </a>
         </div>
       </div>
+
 
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${

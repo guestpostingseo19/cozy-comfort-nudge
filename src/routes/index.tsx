@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Star, Flame, Clock, MapPin, Phone, MessageCircle, ChevronRight, ShieldCheck, Truck, Award, Utensils } from "lucide-react";
+import { Star, Flame, Clock, MapPin, Phone, MessageCircle, ChevronRight, ShieldCheck, Truck, Award, ChefHat, Plus } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Marquee } from "@/components/Marquee";
+import { useReveal } from "@/hooks/use-reveal";
+
 import { business, telLink, waLink } from "@/lib/business";
 import { menu, deals } from "@/lib/menu";
 import heroPizza from "@/assets/hero-pizza.jpg";
